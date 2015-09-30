@@ -1,0 +1,58 @@
+//
+//  FuzzBizzNess.c
+//
+//
+//  Created by Benson Huynh on 2015-09-29.
+//
+//
+
+//Print numbers from 1 to the user's input for "Nezz".
+//For the multiples of "Fuzz", print "Fuzz" instead of the number
+//For the multiples of "Bizz", print "Bizz" instead of the number
+//For numbers which are multiples of both "Fuzz" and "Bizz" print "FuzzBizz"
+
+#include "stdio.h"
+#include "stdlib.h"
+
+int main()
+{
+    char nezzWord[4];
+    printf("Pick any number from 1 up to 999 for Nezz and hit [Enter]\n");
+    gets(nezzWord);
+    
+    char fuzzWord[4];
+    printf("Pick any number from 1 up to 999 for Fuzz and hit [Enter]:\n");
+    gets(fuzzWord);
+    
+    char bizzWord[4];
+    printf("Pick any number from 1 up to 999 for Bizz and hit [Enter]:\n");
+    gets(bizzWord);
+    
+    int nezz = atoi(nezzWord);
+    int fuzz = atoi(fuzzWord);
+    int bizz = atoi(bizzWord);
+    int i;
+    for (i = 1; i <= nezz; i++)
+    {
+        if
+            (i % fuzz == 0 & i % bizz == 0)
+        {
+            printf("FuzzBizz\n");
+        }
+        else if
+            (i % fuzz == 0)
+        {
+            printf("Fuzz\n");
+        }
+        else if
+            (i % bizz == 0)
+        {
+            printf("Bizz\n");
+        }
+        else
+        {
+            printf("%d\n", i);
+        }
+    }
+    return 0;
+}
